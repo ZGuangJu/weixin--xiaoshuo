@@ -1,0 +1,168 @@
+view{
+  font-size:32rpx;
+}
+
+.slide-image{
+    width: 100%;
+    height: 100%;
+}
+.tag{
+    display: flex;
+    flex-direction:row;
+    align-items:center;
+    flex-wrap: wrap;
+    padding:60rpx 0rpx;
+}
+
+.custom{
+    display: flex;
+    flex-direction:row;
+    align-items:center;
+    margin:20rpx;
+}
+.col3{
+    width:33.33%;
+    text-align: center;
+}
+.col4{
+    width:25%;
+    text-align: center;
+}
+.custom-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.custom-box image{
+    display:flex;
+    width:100rpx;
+    height:100rpx;
+    margin:10rpx;
+}
+
+.line{
+  background: #E7E7E7;
+  height:80rpx;
+  display: flex;
+  align-items:center;
+}
+
+.line30{
+    background: #E7E7E7;
+    height:15rpx;
+    display: flex;
+    align-items:center;
+}
+
+.line icon{
+  font-size:40rpx;
+  margin:0 8rpx 0 20rpx;
+  color: #1296db;
+  line-height: 40rpx;
+}
+.line text{
+  height: 40rpx;
+}
+.line .red{
+  color:#d81e06;
+}
+
+.mg10{
+    margin-top:10px;
+}
+
+.page-section-spacing {
+    margin-top: 30rpx;
+}
+
+.title-block {
+    height: 45rpx;
+    padding-right: 25rpx;
+}
+
+.blue-block {
+    background: #4ca2dc;
+    height: 45rpx;
+    width: 10 rpx;
+    float: left;
+}
+
+.title-name {
+    margin-left: 25 rpx;
+    float: left;
+}
+.scroll-view_H{
+    white-space: nowrap;
+}
+.scroll-view-item{
+    height: 300rpx;
+}
+
+.scroll-view-item_H {
+    display: inline-block;
+    width: 100%;
+    height: 350 rpx;
+}
+
+.desc {
+    display: -webkit-box;
+    color: #4d4d4d;
+    overflow: hidden;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    float: left;
+    width: 500rpx;
+    font-size: 26rpx;
+}
+
+.more {
+    float: right;
+    font-size: 28rpx;
+    color: #4ca2dc;
+    height: 100%;
+    line-height: 45rpx;
+    margin-right: 20rpx;
+
+
+}
+
+.more:after{
+    margin-top: 14rpx;
+    width: 12rpx;
+    height: 12rpx;
+    line-height: 12rpx;
+    border-left: 1rpx solid transparent;
+    border-top: 1rpx solid #4ca2dc;
+    border-right: 1rpx solid #4ca2dc;
+    border-bottom: 1rpx solid transparent;
+    transform:rotate(45deg);
+    content: "";
+    position:absolute;
+}
+
+.bookInfo {
+    padding:25rpx;
+    background: white;
+    height: 250rpx;
+    border-bottom: 1rpx solid #E7E7E7;
+}
+
+.dot {
+    width: 4px;
+    height: 4px;
+    border: 1px solid #E7E7E7;
+    border-radius: 4px;
+    background: #E7E7E7;
+    display: inline-block;
+    margin: 0 2px;
+}
+
+.dot-active {
+    width: 6px;
+    background: #4ca2dc;
+    border: 1px solid #4ca2dc;
+
+}

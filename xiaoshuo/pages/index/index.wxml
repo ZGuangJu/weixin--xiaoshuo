@@ -1,0 +1,107 @@
+<!--轮播图-->
+<swiper style="width: 100%;height: 300rpx;" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image"/>
+    </swiper-item>
+  </block>
+</swiper>
+<!---->
+<view class="custom">
+  <view class="col4 custom-box" bindtap="toList" data-Cat="Point" data-Title="全部分类">
+    <image src="../../img/category.png" />
+    <text>分类</text>
+  </view>
+  <view class="col4 custom-box" bindtap="toList" data-Cat="Boys" data-Title="热门排行">
+    <image src="../../img/paihang.png" />
+    <text>排行</text>
+  </view>
+  <view class="col4 custom-box" bindtap="toList" data-Cat="Girls" data-Title="最新收集">
+    <image src="../../img/newbook.png" />
+    <text>最新</text>
+  </view>
+  <view class="col4 custom-box" bindtap="toList" data-Cat="New" data-Title="完结小说">
+    <image src="../../img/finish.png" />
+    <text>完结</text>
+  </view>
+</view>
+<!-- 站长推荐 -->
+<view class="page-body">
+  <view class="page-section">
+    <view class="line30">
+    </view>
+    <view class="page-section-spacing">
+      <view style="height: 45rpx;">
+        <view style="background: #4ca2dc;height: 100%;width: 10rpx;float: left;"></view>
+        <view style="margin-left: 25rpx;float: left;">站长推荐</view>
+        <view style="float: right;margin-right: 25rpx;">
+          <text wx:for="{{reclist}}" class="dot {{(dotCurrent === index)? 'dot-active' :''}}"></text>
+        </view>
+      </view>
+      <swiper style="width: 100%;height: 350rpx;" autoplay="true" interval="3000" duration="500" bindchange="recchange">
+          <swiper-item wx:for="{{reclist}}" wx:for-item="items">
+            <block wx:for="{{items}}" wx:for-item="item">
+              <view style="margin: 25rpx;background: white;width: 200rpx;height: 300rpx;float: left" bindtap="clickDetail" data-Id="{{item.id}}" data-Category="{{item.category}}"
+                    data-Title="{{item.name}}">
+                <image style="width: 200rpx;height: 250rpx;" src="{{item.image}}" />
+                <text style="display: block;text-align: center;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">{{item.name}}</text>
+              </view>
+            </block>
+          </swiper-item>
+      </swiper>
+    </view>
+  </view>
+</view>
+<!--热门小说-->
+<view class="page-body">
+  <view class="page-section">
+    <view class="line30"></view>
+    <view class="page-section-spacing">
+      <view style="height: 45rpx;padding-right: 25rpx;">
+        <view style="background: #4ca2dc;height: 100%;width: 10rpx;float: left;"></view>
+        <view style="margin-left: 25rpx;float: left;height: 100%;">热门小说</view>
+        <view class="more" bindtap="toList" data-Cat="Point" data-Title="热门小说" data-show="false">更多</view>
+      </view>
+    </view>
+    <view class="bookInfo" wx:for="{{hotlist}}"
+          wx:for-item="item" bindtap="clickDetail" data-Id="{{item.id}}" data-Category="{{item.category}}"
+          data-Title="{{item.name}}">
+      <view style="float: left">
+        <image style="width: 200rpx;height: 250rpx;" src="{{item.image}}"/>
+      </view>
+      <view style="height: 100%;width:500rpx;margin-left: 220rpx;">
+        <view>
+          <view style="float: left;width: 300rpx;">
+            <view>{{item.name}}</view>
+            <view style="color: #4ca2dc;font-size: 28rpx;">{{item.author}}</view>
+          </view>
+          <view style="margin-top:20rpx;float:left;width:150rpx;height: 40rpx;line-height:40rpx;border:1px solid #4ca2dc;color: #4ca2dc;text-align: center;border-radius: 10rpx;">
+            立即阅读
+          </view>
+        </view>
+        <view class="desc">{{item.description}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<!--新书推荐-->
+<view class="page-body">
+  <view class="page-section">
+    <view class="line30"></view>
+    <view class="page-section-spacing">
+      <view style="height: 45rpx;padding-right: 25rpx;">
+        <view style="background: #4ca2dc;height: 100%;width: 10rpx;float: left;"></view>
+        <view style="margin-left: 25rpx;float: left;height: 100%;">新书推荐</view>
+        <view class="more" bindtap="toList" data-Cat="Point" data-Title="新书推荐" data-show="false">更多</view>
+      </view>
+    </view>
+    <view id="demo3" class="scroll-view-item_H demo-text-3">
+      <view style="margin: 25rpx;background: white;width: 200rpx;height: 300rpx;float: left" wx:for="{{newlist}}"
+            wx:for-item="item" bindtap="clickDetail" data-Id="{{item.id}}" data-Category="{{item.category}}"
+            data-Title="{{item.name}}">
+        <image style="width: 200rpx;height: 250rpx;" src="{{item.image}}"/>
+        <text style="display: block;text-align: center">{{item.name}}</text>
+      </view>
+    </view>
+  </view>
+</view>

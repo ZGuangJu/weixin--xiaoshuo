@@ -1,0 +1,13 @@
+<template name="bookItem">
+    <view class='bookItem'>
+        <image class='bookIcon' src="{{image}}"></image>
+        <view class='bookDesc'>
+            <text class="title">{{name}}</text>
+            <text>
+                <text class="author">{{author}}</text> [{{categoryname}}]
+            </text>
+            <text class="brief">{{description}}</text>
+        </view>
+    </view>
+    <view class="bookItem-line"></view>
+</template>

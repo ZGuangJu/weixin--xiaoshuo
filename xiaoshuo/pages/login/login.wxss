@@ -1,0 +1,84 @@
+/* pages/user/user.wxss */
+
+main {
+    position:relative;
+    width:100%;
+    background-color:#fbf9fe;
+    overflow:hidden;
+}
+
+.main .avatar {
+    width:100%;
+    min-height:80px;
+    text-align:center;
+    margin:10px auto;
+}
+.main .avatar image {
+    width:66px;
+    height:66px;
+    border-radius:99px;
+    -moz-border-radius: 99px;
+    -webkit-border-radius:99px;
+    border:0px solid #ccc;
+    margin:10px auto;
+}
+
+
+.text {
+    text-align: center;
+    width: 100%;
+
+}
+
+.main .avatar icon {
+    position:relative;
+    height:8px;
+    width:8px;
+    color:#62b651;
+    top:-5px;
+}
+
+.content-row{
+    display: flex;
+    width: 100%;
+    padding:5px 10px;
+    border-bottom: 1px solid #E7E7E7;
+    justify-content:space-between;
+    vertical-align:middle;
+}
+
+.content-row text{
+    font-size:14px;
+}
+
+.content-row icon{
+    margin:-3px 20px 0 0;
+    line-height: 20px;
+}
+.blue{
+    color:#1296db;
+    font-size: 18px;
+}
+.green{
+    color:#4ca2dc;
+    font-size: 18px;
+}
+
+.line{
+    background: #E7E7E7;
+    height:40rpx;
+    display: flex;
+    align-items:center;
+}
+
+button {
+    width: 90%;
+    margin-top: 10px;
+    border-radius: 0px;
+    border: #4ca2dc solid 1px;
+    background-color: #4ca2dc;
+    padding: 0px;
+    color: white;
+    font-size: 14px;
+
+}

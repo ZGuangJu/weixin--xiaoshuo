@@ -1,0 +1,46 @@
+<view class="container">
+    <scroll-view class="{{visible?'visible':'hidden'}}" scroll-y="{{false}}" style="height:100%;">
+        <view class='row'>
+            <image class='rowIcon' src="{{item.image}}"></image>
+            <view class='rowDesc'>
+                <text style="font-size: 16px;font-weight: bold;">{{item.name}}</text>
+                <text>{{item.status===0?'连载中':'已完结'}}</text>
+                <text style="color: #4ca2dc;">{{item.author}}</text>
+                <text>[{{item.categoryname}}]</text>
+            </view>
+        </view>
+        <view class='btnGroup'>
+            <button class="orange-btn {{inBookshelf?'grey':''}}" disabled="{{inBookshelf}}" bindtap="insertBookShelf">
+                加入书架
+            </button>
+            <button class='blue-btn' bindtap="toReader">立即阅读</button>
+            <!-- <button class='orange-btn' bindtap="">全书缓存</button> -->
+        </view>
+        <view class="desc">
+            <view class="lab" style="font-weight: bold"> 内容简介</view>
+            <view class="content {{showMoreDesc?'autoHeight':'limitHeight'}}">{{item.description}}</view>
+            <view class="blue-link" bindtap="showDesc">{{showMoreText}}</view>
+        </view>
+        <view class="linePanel" bindtap="changeShowCatelog">
+            <view><text style="color: #4ca2dc;">查看目录</text>  共{{item.totalCount}}章</view>
+            <view>更新于:{{item.modifytime}}</view>
+        </view>
+        <view class="desc">
+            <text>猜你喜欢</text>
+            <view class="grid">
+                <view wx:for="{{recList}}">
+                    <view class="grid-cell  u-1of4 mg10">
+                        <view class="box" bindtap="clickDetail" data-Id="{{item.id}}" data-Category="{{item.category}}"
+                              data-Title="{{item.name}}">
+                            <image class="icon" src="{{item.image}}"/>
+                            <view class="title" style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">{{item.name}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view>
+<import src="../share/catelog/catelog.wxml"/>
+<template is="catelog"
+          data="{{catelogs:catelogs,showCatelog:showCatelog,title:item.name,windowHeight:windowHeight,currentSerialNumber:1}}"/>

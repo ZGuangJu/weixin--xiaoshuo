@@ -1,0 +1,10 @@
+<view class="main">
+    <view class="avatar">
+        <image src="{{logo}}"></image>
+    </view>
+    <view>
+        <view class="text" style="font-size: 22px;">授权登陆</view>
+        <view class="text" style="font-size: 14px;color: #b2b9a8;margin-top: 10px;">允许登陆二月半读书小程序</view>
+        <button open-type="getUserInfo" bindgetuserinfo="userinfos">授权微信账号登陆</button>
+    </view>
+</view>
